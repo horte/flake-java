@@ -62,6 +62,10 @@ public class UniqueId {
       return String.format("%016d-%s%s-%04d", ts, Integer.toHexString(node_0), Integer.toHexString(node_1), seq);
     }
 
+    public long getLongId() {
+        return ByteBuffer.wrap(getId()).getLong();
+    }
+
     public static void main(String[] args) throws IOException {
         UniqueId uid = new UniqueId();
         int n = Integer.parseInt(args[0]);
