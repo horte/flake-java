@@ -37,7 +37,7 @@ public class UniqueId {
         
         long time;
         synchronized(lock) {
-            time = System.currentTimeMillis();
+            time = System.nanoTime();
             if(time != lastTimestamp) {
                 lastTimestamp = time;
                 seq = 0;
