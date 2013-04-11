@@ -1,9 +1,9 @@
 package uniq;
 
+import com.eaio.uuid.UUIDGen;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
-
-import com.eaio.uuid.UUIDGen;
 
 public class UniqueId {
   
