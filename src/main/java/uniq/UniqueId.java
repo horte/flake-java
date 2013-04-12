@@ -37,7 +37,7 @@ public class UniqueId {
         
         long time;
         synchronized(lock) {
-            time = System.nanoTime();
+            time = System.currentTimeMillis();
             if(time != lastTimestamp) {
                 lastTimestamp = time;
                 seq = 0;
@@ -62,8 +62,8 @@ public class UniqueId {
       return String.format("%016d-%s%s-%04d", ts, Integer.toHexString(node_0), Integer.toHexString(node_1), seq);
     }
 
-    public long getLongId() {
-        return ByteBuffer.wrap(getId()).getLong();
+    public BigInteger getIdNumber() {
+        return new BigInteger(getId());
     }
 
     public static void main(String[] args) throws IOException {
